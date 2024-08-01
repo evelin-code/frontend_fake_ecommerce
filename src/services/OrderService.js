@@ -32,6 +32,7 @@ export const createOrder = async () => {
     const data = await response.json();
 
     if (data.status === 1) {
+      localStorage.setItem('orderId', data.id);
       return data;
     } else {
       throw new Error(data.message || 'Error creating order.');
