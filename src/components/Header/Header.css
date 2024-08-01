@@ -21,6 +21,7 @@
 .header-right {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .nav-link {
@@ -36,4 +37,36 @@
 .cart-icon {
   fill: #fff;
   cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.cart-icon.pulsing {
+  animation: pulse 1s infinite;
+}
+
+.cart-icon-container {
+  position: relative;
+}
+
+.notification-dot {
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
